@@ -1,30 +1,38 @@
-# auto_mcp_ai_pack_jira (public example)
+# auto_mcp_ai_sample_packs (public)
 
-Site pack **Jira Cloud** for [auto_mcp_ai](https://github.com/trungtv/auto_mcp_ai) — cùng pattern với `@entrade/site-adapter-*` trong repo private.
+Sample site adapters for [auto_mcp_ai](../auto_mcp_ai/) — same layout as private **`auto_mcp_ai_packs`**, but public and meant for demos + agent-authored packs.
 
-Package npm: **`@auto-mcp/site-adapter-jira`**
+| Package | Site |
+|---------|------|
+| `@auto-mcp/site-adapter-jira` | Jira Cloud (reference) |
+
+Add new samples under **`packages/site-adapter-<name>/`**, register in `scripts/wire-sample-core.mjs` (`WIRED_SAMPLES`), then `pnpm wire:core`.
 
 ## Dev tree
 
 ```
 <workspace>/
-  auto_mcp_ai/              # core (git public)
-  auto_mcp_ai_pack_jira/    # repo này
-  auto_mcp_ai_packs/        # optional — Entrade private
+  auto_mcp_ai/                 # core (git public)
+  auto_mcp_ai_sample_packs/    # this repo
+  auto_mcp_ai_packs/           # optional — Entrade private
 ```
 
-## Setup
+## Setup (Jira demo)
 
 ```bash
-git clone <auto_mcp_ai> auto_mcp_ai
-git clone <auto_mcp_ai_pack_jira> auto_mcp_ai_pack_jira
-cd <workspace> && pnpm install   # nếu có pnpm-workspace ở folder cha
-cd auto_mcp_ai_pack_jira && pnpm wire:core
-pnpm --dir auto_mcp_ai build
+cd <workspace>
+pnpm install
+pnpm wire:sample              # folder cha — hoặc:
+cd auto_mcp_ai_sample_packs && pnpm wire:core
+pnpm install
+pnpm run build:wired
 ```
 
-## Copy pattern cho pack mới
+**Do not push** populated `adapters.extra.ts` to the public core remote.
 
-1. Fork/copy repo này hoặc `site-adapter-jira` → đổi `match`, formatters, package name.
-2. Thêm import trong `core/packages/site-adapters/src/adapters.extra.ts`.
-3. Pin `@auto-mcp/*` từ tag/release core.
+## Build / test
+
+```bash
+pnpm build
+pnpm test
+```

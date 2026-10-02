@@ -1,5 +1,5 @@
 {
-  "extends": "../auto_mcp_ai/tsconfig.base.json",
+  "extends": "../../../auto_mcp_ai/tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",

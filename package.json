@@ -1,29 +1,16 @@
 {
-  "name": "@auto-mcp/site-adapter-jira",
+  "name": "auto-mcp-ai-sample-packs",
+  "private": true,
   "version": "0.1.0",
-  "private": false,
-  "description": "Example public site pack — Jira Cloud for auto_mcp_ai",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
-  },
+  "description": "Public sample site packs for auto_mcp_ai (add new sites under packages/)",
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
-    "build": "rm -rf dist tsconfig.tsbuildinfo && tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "pnpm run build && node --test dist/formatters.test.js dist/pipeline.integration.test.js",
-    "wire:core": "node scripts/wire-core.mjs"
-  },
-  "dependencies": {
-    "@auto-mcp/shared": "workspace:*",
-    "@auto-mcp/site-adapters": "workspace:*"
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "pnpm -r run test",
+    "wire:core": "node scripts/wire-sample-core.mjs"
   },
   "devDependencies": {
-    "@types/node": "^22.13.10",
     "typescript": "^5.8.2"
   }
 }
