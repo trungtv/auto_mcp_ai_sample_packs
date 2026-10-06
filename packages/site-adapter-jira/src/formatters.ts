@@ -1,5 +1,5 @@
 import { GWT_BODY_LIMIT } from "@auto-mcp/shared";
-import type { CapabilityResult } from "@auto-mcp/site-adapters";
+import type { CapabilityResult } from "@auto-mcp/site-adapters/types.js";
 
 export type JiraFormat =
   | "jira.issues"

@@ -1,11 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import {
-  defToCapability,
-  runPipeline,
-  type AdapterContext,
-  type SiteAdapter,
-} from "@auto-mcp/site-adapters";
+import { defToCapability, runPipeline } from "@auto-mcp/site-adapters/bound.js";
+import type { AdapterContext, SiteAdapter } from "@auto-mcp/site-adapters/types.js";
 import type { CapabilityDef, McpSite, ToolDef } from "@auto-mcp/shared";
 import { jiraAdapter } from "./adapter.js";
 

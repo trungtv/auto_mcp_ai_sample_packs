@@ -1,10 +1,10 @@
+import { runPipeline } from "@auto-mcp/site-adapters/bound.js";
 import {
   findPrimitive,
-  runPipeline,
   type Capability,
   type FormatContext,
   type SiteAdapter,
-} from "@auto-mcp/site-adapters";
+} from "@auto-mcp/site-adapters/types.js";
 import {
   applyJiraCapabilityArgs,
   formatJiraCapability,
